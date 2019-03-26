@@ -23,6 +23,7 @@ func TestExec(t *testing.T) {
 	shell.ShowCommands = false
 
 	for _, test := range tests {
+		test := test // pin scope for function literal
 		stdoutOutput += capturer.CaptureStdout(func() {
 			cmd, _ := shell.Exec(test.command, test.input...)
 

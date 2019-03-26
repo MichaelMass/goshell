@@ -74,7 +74,7 @@ func (command *Command) Exec() error {
 	return nil
 }
 
-func (command *Command) createIoWriter(stdoutBuf *bytes.Buffer, stderrBuf *bytes.Buffer) (io.Writer, io.Writer) {
+func (command *Command) createIoWriter(stdoutBuf io.Writer, stderrBuf io.Writer) (io.Writer, io.Writer) {
 	if command.ShowOutput {
 		stdout := io.MultiWriter(os.Stdout, stdoutBuf)
 		stderr := io.MultiWriter(os.Stderr, stderrBuf)
@@ -82,5 +82,5 @@ func (command *Command) createIoWriter(stdoutBuf *bytes.Buffer, stderrBuf *bytes
 		return stdout, stderr
 	}
 
-	return io.Writer(stdoutBuf), io.Writer(stderrBuf)
+	return stdoutBuf, stderrBuf
 }
