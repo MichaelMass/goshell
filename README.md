@@ -1,7 +1,7 @@
 # Goshell
 > Utility helper for Go (golang) os/exec package
 
-![](https://github.com/michaelmass/goshell/workflows/build/badge.svg)
+![](https://github.com/michaelmass/goshell/workflows/Test/badge.svg)
 
 `goshell` is a Go (golang) package that wraps [os/exec](https://golang.org/pkg/os/exec/). It extends cmd.Start() to automatically output the cmd's stderr and stdout pipes to the terminal or to a supplied channel. It allows to sequentially execute shell commands.
 
