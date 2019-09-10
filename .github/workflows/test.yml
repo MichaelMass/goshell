@@ -5,19 +5,14 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        id: go
+        with:
+          go-version: 1.12
 
-    - name: Set up Go 1.12
-      uses: actions/setup-go@v1
-      id: go
-      with:
-        go-version: 1.12
+      - name: Checkout code
+        uses: actions/checkout@v1
 
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v1
-
-    - name: Get dependencies
-      run: |
-        go get -v -t -d ./...
-
-    - name: Test
-      run: go test -v .
+      - name: Test
+        run: go test -v .
