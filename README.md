@@ -37,6 +37,8 @@ shell.Exec("go", "fmt")
 
 ## Test
 
+To run the test, you can use the command.
+
 `go test ./...`
 
 ## Contribution
