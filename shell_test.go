@@ -13,7 +13,6 @@ func TestExec(t *testing.T) {
 		output  string
 	}{
 		{"go", []string{"help", "version"}, "usage: go version\n\nVersion prints the Go version, as reported by runtime.Version.\n"},
-		{"go", []string{"help", "version"}, "usage: go version\n\nVersion prints the Go version, as reported by runtime.Version.\n"},
 	}
 
 	var stdoutOutput string
@@ -53,7 +52,6 @@ func TestExecOnError(t *testing.T) {
 		input   []string
 		output  string
 	}{
-		{"go", []string{"help", "help"}, "go help help: unknown help topic. Run 'go help'.\n"},
 		{"go", []string{"help", "help"}, "go help help: unknown help topic. Run 'go help'.\n"},
 	}
 
